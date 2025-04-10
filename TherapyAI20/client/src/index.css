@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  :root {
+    --transition-duration: 0.5s;
+  }
+
+  html {
+    transition: background-color var(--transition-duration) ease,
+                color var(--transition-duration) ease;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    transition: background-color var(--transition-duration) ease;
+  }
+
+  /* Smooth transitions for theme-dependent elements */
+  .bg-primary,
+  .text-primary,
+  .border-primary,
+  .bg-secondary,
+  .text-secondary,
+  .border-secondary {
+    transition: all var(--transition-duration) ease;
+  }
+}
